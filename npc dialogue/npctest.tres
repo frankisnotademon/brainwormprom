@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://d3xv0q4jpwlck"]
+
+[ext_resource type="Script" uid="uid://cfk8ighqx8k8p" path="res://dialogue/dialogue.gd" id="1_aeqg8"]
+
+[resource]
+script = ExtResource("1_aeqg8")
+name = "Bob"
+lines = Array[String](["HOI IM TEMMIE~", "jk im bob"])
+metadata/_custom_type_script = "uid://cfk8ighqx8k8p"
