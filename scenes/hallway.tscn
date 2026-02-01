@@ -116,7 +116,7 @@ offset_right = -66.0
 offset_bottom = 601.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 14, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 14, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_1k2v8")
 
 [connection signal="area_entered" from="DialogueNPC/Area2D" to="DialogueNPC/Area2D" method="_on_area_2d_area_entered"]
