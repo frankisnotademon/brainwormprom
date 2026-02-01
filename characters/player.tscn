@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://c78uul6o2sa8g"]
+[gd_scene load_steps=12 format=3 uid="uid://c78uul6o2sa8g"]
 
 [ext_resource type="Script" uid="uid://dym4xgd6utn44" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cuuj35dvb4kms" path="res://dialogue/dialoguecontroller.gd" id="2_3eadt"]
 [ext_resource type="Script" uid="uid://cfk8ighqx8k8p" path="res://dialogue/dialogue.gd" id="3_tory2"]
+[ext_resource type="Script" uid="uid://b546d462sdjji" path="res://characters/timer.gd" id="4_x0jl3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(318.5, 153.5)
+size = Vector2(185, 153.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnjla"]
 bg_color = Color(0.700404, 0.448514, 1, 1)
@@ -24,13 +25,16 @@ font_color = Color(1, 0, 1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tory2"]
 size = Vector2(315, 337)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tory2"]
+bg_color = Color(0.176419, 0.176419, 0.176419, 1)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(41.75, 41.75)
+position = Vector2(108.5, 41.75)
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Panel" type="Panel" parent="CharacterBody2D/CollisionShape2D"]
@@ -41,7 +45,7 @@ offset_bottom = 51.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(0.5, 0.5)
 
 [node name="DialogueController" type="Node" parent="CharacterBody2D"]
 script = ExtResource("2_3eadt")
@@ -98,5 +102,33 @@ lines = Array[String](["HOI IM TEMMIE", "jk im bob"])
 [node name="Area2D" type="Area2D" parent="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(37.5, -38.5)
+position = Vector2(107, -41)
 shape = SubResource("RectangleShape2D_tory2")
+
+[node name="Panel" type="Panel" parent="CharacterBody2D"]
+offset_left = 620.0
+offset_top = -638.0
+offset_right = 1122.0
+offset_bottom = -314.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tory2")
+
+[node name="TimeLeft" type="Label" parent="CharacterBody2D/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -481.0
+offset_top = 46.0
+offset_right = -40.0
+offset_bottom = 271.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "blah"
+autowrap_mode = 2
+script = ExtResource("4_x0jl3")
+
+[node name="Timer" type="Timer" parent="CharacterBody2D/Panel/TimeLeft"]
+wait_time = 300.0
+one_shot = true
+
+[connection signal="timeout" from="CharacterBody2D/Panel/TimeLeft/Timer" to="CharacterBody2D" method="_on_timer_timeout"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp1128i5iwbi0"]
+
+[ext_resource type="Script" uid="uid://bubrnkqualave" path="res://scenes/jessica.gd" id="1_iawc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khuvb"]
+size = Vector2(194, 423)
+
+[node name="Jessica" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(87, 201.5)
+shape = SubResource("RectangleShape2D_khuvb")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -173.0
+offset_top = 161.0
+offset_right = 354.0
+offset_bottom = 382.0
+script = ExtResource("1_iawc7")
+
+[node name="Three" type="Label" parent="Panel"]
+visible = false
+offset_left = 26.0
+offset_top = 77.0
+offset_right = 507.0
+offset_bottom = 204.0
+text = "I met Matthew right after and I kissed him! It was wonderful! I’d been having a great time until… you know… the whole quarantine thing."
+autowrap_mode = 2
+
+[node name="Two" type="Label" parent="Panel"]
+visible = false
+offset_left = 28.0
+offset_top = 72.0
+offset_right = 509.0
+offset_bottom = 199.0
+text = "I talked to Lydia a little and she gave me a sip of her juice box, and weirdly enough, it helped. I don’t know if she spiked it or something but I felt a lot more confident, and all the nausea just went away."
+autowrap_mode = 2
+
+[node name="One" type="Label" parent="Panel"]
+offset_left = 24.0
+offset_top = 58.0
+offset_right = 505.0
+offset_bottom = 185.0
+text = "I was feeling a little anxious before the dance. It could just be that I hate when my dad talks about the bioweapons he’s working on, or when he kisses me goodbye like I’m a little girl or something, but I don’t know. It felt different"
+autowrap_mode = 2
+
+[node name="Name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 8.0
+offset_right = 141.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 30
+text = "Jessica"
