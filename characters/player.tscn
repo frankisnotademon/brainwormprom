@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://c78uul6o2sa8g"]
+[gd_scene load_steps=13 format=3 uid="uid://c78uul6o2sa8g"]
 
 [ext_resource type="Script" uid="uid://dym4xgd6utn44" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cuuj35dvb4kms" path="res://dialogue/dialoguecontroller.gd" id="2_3eadt"]
 [ext_resource type="Script" uid="uid://cfk8ighqx8k8p" path="res://dialogue/dialogue.gd" id="3_tory2"]
 [ext_resource type="Script" uid="uid://b546d462sdjji" path="res://characters/timer.gd" id="4_x0jl3"]
+[ext_resource type="Texture2D" uid="uid://djlro5oiu1v2w" path="res://characters/brainwormnurse.png" id="5_evndh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(185, 153.5)
@@ -38,6 +39,7 @@ position = Vector2(108.5, 41.75)
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Panel" type="Panel" parent="CharacterBody2D/CollisionShape2D"]
+visible = false
 offset_left = -87.0
 offset_top = -171.0
 offset_right = 92.0
@@ -130,5 +132,10 @@ script = ExtResource("4_x0jl3")
 [node name="Timer" type="Timer" parent="CharacterBody2D/Panel/TimeLeft"]
 wait_time = 300.0
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(111.25, -7.375)
+scale = Vector2(3.70536, 3.82143)
+texture = ExtResource("5_evndh")
 
 [connection signal="timeout" from="CharacterBody2D/Panel/TimeLeft/Timer" to="CharacterBody2D" method="_on_timer_timeout"]

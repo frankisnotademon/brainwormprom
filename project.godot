@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BrainWormProm"
-run/main_scene="uid://dtee3wdqhjxnk"
+run/main_scene="uid://y7gkcfk1m0xy"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [input]
