@@ -134,8 +134,8 @@ wait_time = 300.0
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(111.25, -7.375)
-scale = Vector2(3.70536, 3.82143)
+position = Vector2(108, -26)
+scale = Vector2(5.63839, 5.22818)
 texture = ExtResource("5_evndh")
 
 [connection signal="timeout" from="CharacterBody2D/Panel/TimeLeft/Timer" to="CharacterBody2D" method="_on_timer_timeout"]

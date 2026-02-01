@@ -151,7 +151,7 @@ size = Vector2(401, 588)
 size = Vector2(384.5, 1444.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxf57"]
-size = Vector2(584, 791)
+size = Vector2(820, 778.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_txc3n"]
 atlas = ExtResource("5_1k2v8")
@@ -414,10 +414,11 @@ position = Vector2(-1242.25, 3090)
 shape = SubResource("RectangleShape2D_frgbo")
 
 [node name="Lydia" type="Area2D" parent="."]
+position = Vector2(104, 227)
 script = ExtResource("6_txc3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lydia"]
-position = Vector2(2807, -844)
+position = Vector2(2925, -850.25)
 shape = SubResource("RectangleShape2D_fxf57")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lydia"]
